@@ -21,13 +21,15 @@ class ProjectResource extends Resource
             ID::make()->sortable(),
             Text::make('Название', 'name')
             ->required(),
+            Text::make('Описание', 'other')
+            ->required(),
             Image::make('Фото работы', 'images')
             ->dir('projects/images') // Директория где будут хранится файлы в storage (по умолчанию /)
             ->disk('public') // filesystems disk
-            ->allowedExtensions(['jpg', 'gif', 'png'])
+            ->allowedExtensions(['jpg', 'png'])
             ->multiple()
             ->removable()
-            ->disableDownload()
+            ->required(),
         ];
 	}
 

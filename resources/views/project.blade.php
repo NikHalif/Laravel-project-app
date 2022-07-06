@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
+@extends('layouts.app')
+
+@section('title')
     @isset($project)
-    <title>{{ $project->name; }}</title>
+        Проект - {{$project->name;}}
     @endisset
     @empty($project)
-    <title>Проект</title>
+        Проект не найден
     @endempty
-</head>
-<body>
-    <div class="container-fluid">
-        @isset($project)
+@endsection
+
+@section('content')
+    @isset($project)
         <div class="text-center">
-            @foreach ( $project->images as $img)
-                <img src="{{ \Illuminate\Support\Facades\Storage::url($img) }}" alt="{{ $project->name }}" class="img-fluid" style="max-width: 100%; height: auto;">
-            @endforeach
+            <x-card :project="$project"/>
         </div>
-        @endisset
-    </div>
-</body>
-</html>
+    @endisset
+@endsection

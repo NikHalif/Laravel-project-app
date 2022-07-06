@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
+use ImageOptimizer;
+
+use function PHPSTORM_META\type;
+
 class ProjectController extends Controller
 {
     public function get_id(Project $project){
@@ -17,7 +21,9 @@ class ProjectController extends Controller
     }
     public function view_id(Project $project){
 
-        return view('project', ['project' => $project ]);
+        return view('project', [
+            'project' => $project,
+        ]);
     }
 
 }

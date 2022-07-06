@@ -13276,6 +13276,47 @@
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
         }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::auth()
+         * @param mixed $options
+         * @static 
+         */ 
+        public static function auth($options = [])
+        {
+                        return \Illuminate\Routing\Router::auth($options);
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::resetPassword()
+         * @static 
+         */ 
+        public static function resetPassword()
+        {
+                        return \Illuminate\Routing\Router::resetPassword();
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::confirmPassword()
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        return \Illuminate\Routing\Router::confirmPassword();
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::emailVerification()
+         * @static 
+         */ 
+        public static function emailVerification()
+        {
+                        return \Illuminate\Routing\Router::emailVerification();
+        }
          
     }
             /**
@@ -17032,6 +17073,77 @@
      
 }
 
+    namespace Spatie\LaravelImageOptimizer\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class ImageOptimizer {
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getOptimizers()
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->getOptimizers();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function addOptimizer($optimizer)
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->addOptimizer($optimizer);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setOptimizers($optimizers)
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->setOptimizers($optimizers);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setTimeout($timeoutInSeconds)
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->setTimeout($timeoutInSeconds);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function useLogger($log)
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->useLogger($log);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function optimize($pathToImage, $pathToOutput = null)
+        {
+                        /** @var \Spatie\ImageOptimizer\OptimizerChain $instance */
+                        return $instance->optimize($pathToImage, $pathToOutput);
+        }
+         
+    }
+     
+}
+
     namespace Illuminate\Http { 
             /**
      * 
@@ -17095,6 +17207,59 @@
         public static function hasValidSignatureWhileIgnoring($ignoreQuery = [], $absolute = true)
         {
                         return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */ 
+        class Router {
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::auth()
+         * @param mixed $options
+         * @static 
+         */ 
+        public static function auth($options = [])
+        {
+                        return \Illuminate\Routing\Router::auth($options);
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::resetPassword()
+         * @static 
+         */ 
+        public static function resetPassword()
+        {
+                        return \Illuminate\Routing\Router::resetPassword();
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::confirmPassword()
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        return \Illuminate\Routing\Router::confirmPassword();
+        }
+                    /**
+         * 
+         *
+         * @see \Laravel\Ui\AuthRouteMethods::emailVerification()
+         * @static 
+         */ 
+        public static function emailVerification()
+        {
+                        return \Illuminate\Routing\Router::emailVerification();
         }
          
     }
@@ -20853,6 +21018,7 @@ namespace  {
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
+            class ImageOptimizer extends \Spatie\LaravelImageOptimizer\Facades\ImageOptimizer {}
      
 }
 
