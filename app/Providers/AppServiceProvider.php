@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\GroupResource;
 use Illuminate\Support\ServiceProvider;
 
 use App\MoonShine\Resources\UserResource;
@@ -40,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
         ])->icon('users'),*/
         MenuGroup::make('Проекты', [
             ProjectResource::class,
+            GroupResource::class,
         ])->icon('bookmark'),
         ]);
     }

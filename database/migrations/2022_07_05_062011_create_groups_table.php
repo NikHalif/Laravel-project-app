@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->foreignId('group_id')
-            ->nullable()
-            ->constrained()
-            ->cascadeOnUpdate()
-            ->restrictOnDelete();
-            $table->text('other');
-            $table->json("images");
             $table->timestamps();
         });
     }
@@ -34,9 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->dropForeign(['group_id']);
-        });
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('groups');
     }
 };

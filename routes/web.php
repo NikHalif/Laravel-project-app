@@ -17,6 +17,4 @@ use Illuminate\Support\Facades\Route;
     Route::get('pj{project}', [\App\Http\Controllers\ProjectController::class, 'view_id'])->name('project')->where('project', '[0-9]+');
 //});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'view']);

@@ -12,7 +12,7 @@
 @section('content')
     @isset($project)
         <div class="text-center">
-            <x-card :project="$project"/>
+            <x-carousel :images="$project->images"/>
         </div>
     @endisset
 @endsection

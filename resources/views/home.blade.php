@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    @isset($project)
-    <title>{{ $project->name; }}</title>
+@extends('layouts.app')
+
+@section('title')
+    {{ config('app.name') }}
+@endsection
+
+@section('content')
+    @isset($projects)
+            <x-all-project-cards :projects="$projects"/>
     @endisset
-    @empty($project)
-    <title>Проект</title>
-    @endempty
-
-    @vite(['resources/js/app.js'])
-
-</head>
-<body>
-    <div class="container-fluid">
-        @isset($project)
-        <div class="text-center">
-            <x-carousel :images="$project->images"/>
-        </div>
-        @endisset
-    </div>
-</body>
-</html>
+@endsection

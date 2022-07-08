@@ -12,26 +12,15 @@
 
 namespace App\Models{
 /**
- * App\Models\Imange
+ * App\Models\Group
  *
- * @property int $project_id
- * @property string|null $title
- * @property string|null $description
- * @property string $file
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Database\Factories\ImangeFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Imange newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Imange query()
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereFile($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereProjectId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Imange whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $group
+ * @property-read int|null $group_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Group newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Group newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Group query()
  */
-	class Imange extends \Eloquent {}
+	class Group extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -40,9 +29,11 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property string $other
  * @property array $images
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Group|null $group
  * @method static \Database\Factories\ProjectFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Project newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Project newQuery()
@@ -51,6 +42,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereImages($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereOther($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereUpdatedAt($value)
  */
 	class Project extends \Eloquent {}

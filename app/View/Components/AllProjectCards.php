@@ -2,24 +2,19 @@
 
 namespace App\View\Components;
 
-use App\Models\Project;
 use Illuminate\View\Component;
 
-class Carousel extends Component
+class AllProjectCards extends Component
 {
-    public $images;
-    public $id;
-    public $count;
+    public $projects;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($images, $id)
+    public function __construct($projects)
     {
-        $this->images = $images;
-        $this->id = $id;
-        $this->count = count($images);
+        $this->projects = $projects;
     }
 
     /**
@@ -29,6 +24,6 @@ class Carousel extends Component
      */
     public function render()
     {
-        return view('components.carousel');
+        return view('components.all-project-cards');
     }
 }
