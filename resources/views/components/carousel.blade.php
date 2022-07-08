@@ -8,7 +8,7 @@
     <div class="carousel-inner">
         @foreach ($images as $image)
             <div class="carousel-item ratio @if($loop->first) active @endif">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url($image) }}" style="object-fit: cover;">
+                <img src="{{ \Illuminate\Support\Facades\Storage::url($image) }}" style="object-fit: cover;" alt="">
             </div>
         @endforeach
     </div>
