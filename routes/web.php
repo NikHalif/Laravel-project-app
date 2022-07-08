@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::domain('pj{project}')->group(function () {
-    Route::get('pj{project}', [\App\Http\Controllers\ProjectController::class, 'view_id'])->name('project')->where('project', '[0-9]+');
-//});
+Route::get('pj{project}', [\App\Http\Controllers\ProjectController::class, 'view_id'])->name('project')->where('project', '[0-9]+');
+Route::get('gr{group}', [\App\Http\Controllers\GroupController::class, 'view_projects_group'])->name('group')->where('group', '[0-9]+');
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'view']);

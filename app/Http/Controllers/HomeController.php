@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function view(){
         $projects = \App\Models\Project::all();
-        return view('home', [
+        return view('viewproject', [
             'projects' => $projects,
         ]);
     }

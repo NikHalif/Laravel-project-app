@@ -2,7 +2,7 @@
 <div id="carouselImg{{ $id }}" class="carousel slide ratio-4x3" data-bs-ride="carousel">
     <div class="carousel-indicators">
         @for ($i = 0; $i < $count; $i++)
-            <button type="button" data-bs-target="#carouselImg{{ $id }}" data-bs-slide-to="{{ $i }}" @if($loop->first) class="active"@endif aria-current="true" aria-label="Slide {{ $i }}"></button>
+            <button type="button" data-bs-target="#carouselImg{{ $id }}" data-bs-slide-to="{{ $i }}" @if($i==0) class="active"@endif aria-current="true" aria-label="Slide {{ $i }}"></button>
         @endfor
     </div>
     <div class="carousel-inner">

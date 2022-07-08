@@ -9,7 +9,7 @@ class Group extends Model
 {
     use HasFactory;
 
-    public function group()
+    public function projects()
     {
         return $this->hasMany(Project::class);
     }

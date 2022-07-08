@@ -14,11 +14,19 @@ namespace App\Models{
 /**
  * App\Models\Group
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $group
- * @property-read int|null $group_count
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property-read int|null $projects_count
  * @method static \Illuminate\Database\Eloquent\Builder|Group newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Group newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Group query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Group whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Group whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Group whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Group whereUpdatedAt($value)
  */
 	class Group extends \Eloquent {}
 }
@@ -29,6 +37,7 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
+ * @property int|null $group_id
  * @property string $other
  * @property array $images
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -39,6 +48,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Project newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Project query()
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereGroupId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereImages($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereName($value)

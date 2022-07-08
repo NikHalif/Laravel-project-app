@@ -3,8 +3,11 @@
         <x-carousel :images="$project->images" :id="$project->id"/>
         <div class="card-body h-100">
             <h5 class="card-title">{{ $project->name }}</h5>
-            @isset($project->group->name)<h6 class="card-subtitle mb-2 text-muted">{{ $project->group->name }}</h6>@endisset
-            <p class="card-text">{{ $project->other }}</p>
+            @isset($project->group->name)<a href="{{ route( 'group', ['group'=>$project->group->id]) }}" class="link-secondary">
+                <h6 class="card-subtitle mb-2 text-muted">{{ $project->group->name }}</h6>
+                </a>
+                @endisset
+            <p class="card-text">{!! $project->other !!}</p>
         </div>
         <div class="card-body">
             <a href="{{ route( 'project', ['project'=>$project->id]) }}" class="btn btn-primary">Открыть</a>
